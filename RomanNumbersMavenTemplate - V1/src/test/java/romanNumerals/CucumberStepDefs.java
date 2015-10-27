@@ -7,7 +7,8 @@ import cucumber.api.java.en.When;
 import static org.assertj.core.api.Assertions.*;
 
 /**
- * Created by John on 26/07/2015.
+ * John Stinson 26 July 2015
+ * Roman Numbers Kata - Runner for Cucumber
  */
 
 public class CucumberStepDefs {
@@ -19,11 +20,10 @@ public class CucumberStepDefs {
         inputNo = myInputNo;
     }
 
-    @Then("^the result is \"(.*)\"$")
+    @Then("^the result is (.*)$")
     public void the_result_is(String myResult) throws Throwable {
         assertThat(myRomanNumeralGenerator.romanNumeralFor(inputNo))
                 .isEqualTo(myResult);
-        //assertThat(1).isEqualTo(1);
     }
 
 }

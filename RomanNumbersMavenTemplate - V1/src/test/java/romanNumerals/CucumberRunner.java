@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 /**
- * John Stinson 26/07/2015
+ * John Stinson 26 July 2015
  * Roman Numbers Kata - Runner for Cucumber
  */
 @RunWith(Cucumber.class)

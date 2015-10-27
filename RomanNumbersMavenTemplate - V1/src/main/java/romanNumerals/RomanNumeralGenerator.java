@@ -3,33 +3,12 @@ package romanNumerals;
 import java.util.HashMap;
 
 /**
- * Created by John on 12/10/2015.
+ * John Stinson 26 July 2015
+ * Roman Numbers Kata - Runner for Cucumber
  */
 public class RomanNumeralGenerator {
-    static HashMap<Integer, String> romanLookup = new HashMap<Integer, String>();
-    public static void setup(){
-        romanLookup.put(0, "");
-        romanLookup.put(1, "I");
-        romanLookup.put(2, "II");
-        romanLookup.put(3, "III");
-        romanLookup.put(4, "IV");
-        romanLookup.put(5, "V");
-        romanLookup.put(6, "VI");
-        romanLookup.put(7, "VII");
-        romanLookup.put(8, "VIII");
-        romanLookup.put(9, "IX");
-        romanLookup.put(10, "X");
-        romanLookup.put(20, "XX");
-        romanLookup.put(30, "XXX");
-        romanLookup.put(40, "XL");
-        romanLookup.put(50, "L");
-        romanLookup.put(60, "LX");
-        romanLookup.put(70, "LXX");
-        romanLookup.put(80, "LXXX");
-        romanLookup.put(90, "XC");
-    }
 
-    public static String romanNumeralFor(int inputInteger){
+    public String romanNumeralFor(int inputInteger){
         //Iteration 1
         //return "I"
 
@@ -56,13 +35,33 @@ public class RomanNumeralGenerator {
         //return romanLookup.get(inputInteger);
 
         //Iteration 5: Numbers from 1 to 99
+        HashMap<Integer, String> romanLookup = new HashMap<Integer, String>();
+
+        romanLookup.put(0, "");
+        romanLookup.put(1, "I");
+        romanLookup.put(2, "II");
+        romanLookup.put(3, "III");
+        romanLookup.put(4, "IV");
+        romanLookup.put(5, "V");
+        romanLookup.put(6, "VI");
+        romanLookup.put(7, "VII");
+        romanLookup.put(8, "VIII");
+        romanLookup.put(9, "IX");
+        romanLookup.put(10, "X");
+        romanLookup.put(20, "XX");
+        romanLookup.put(30, "XXX");
+        romanLookup.put(40, "XL");
+        romanLookup.put(50, "L");
+        romanLookup.put(60, "LX");
+        romanLookup.put(70, "LXX");
+        romanLookup.put(80, "LXXX");
+        romanLookup.put(90, "XC");
+
         int units = inputInteger%10;
         int tens = inputInteger - units;
         String unitsRoman = romanLookup.get(units);
         String tensRoman = romanLookup.get(tens);
-        String myResult = tensRoman.concat(unitsRoman);
-        return myResult;
-
+        return tensRoman.concat(unitsRoman);
     }
 }
 
