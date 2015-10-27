@@ -19,6 +19,10 @@ public class JUnitTestRomanNumerals extends TestCase{
         myRomanGenerator = new RomanNumeralGenerator();
     }
 
+    //Add in negative scenarios for 0, -1, 100 (out of range).
+    //Note, can't add scenarios for decimals in Java
+    //As Java is type-safe, however Python may throw
+    //error at run-time as it uses duck typing.
     public void test_romanNumeralFor_1_returns_I(){
         assertThat(myRomanGenerator.romanNumeralFor(1)).isEqualTo("I");
     }
@@ -30,7 +34,9 @@ public class JUnitTestRomanNumerals extends TestCase{
         assertThat(myRomanGenerator.romanNumeralFor(3)).isEqualTo("III");
     }
 
-
+    //This prints out performance stats to the commandline.
+    //Can add assert statement once performance success criteria
+    //are understood for the machine this runs on.
     public void testPerformance(){
         //myRomanGenerator.romanNumeralFor(1);  //Add this line to observe impact on performance
         Double runArray[] = {1e0,1e1, 1e2, 1e3, 1e4, 1e5, 1e6};
@@ -38,7 +44,6 @@ public class JUnitTestRomanNumerals extends TestCase{
             System.out.println(getMillisecondsForNRuns(noOfRuns));
         }
     }
-
 
     public double getMillisecondsForNRuns(double noOfRuns){
         long startNanoseconds = System.nanoTime();
